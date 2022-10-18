@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-3">
+    <h4>Add New</h4>
+    <hr>
+    <form action="/add/" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="">ID</label>
+            <input name="sid" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Name</label>
+            <input name="sname" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Contact</label>
+            <input name="scontact" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Add Record</button>
+            <a href="{% url 'show' %}" class="btn btn-info">Show Details</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}
